@@ -11,16 +11,17 @@ namespace ConsoleUI
             return data;
         }
 
-        public string GetData(string text)
-        {
-            ShowData(text);
-
-            return GetData();
-        }
-
         public void ShowData(string text)
         {
             Console.WriteLine(text);
+        }
+        public void ShowError(string text)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+
+            Console.WriteLine(text);
+
+            Console.ResetColor();
         }
     }
 }

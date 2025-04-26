@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MainComponents.Enums;
 using MainComponents.Models;
 
 namespace MainComponents.Interfaces.UI
 {
-    internal interface IMainUI : IOutput
+    public interface IMainUI : IOutput
     {
-        string GetTextForDate(DateTime date);
+        string GetTextForDateOrChoise(DateTime date, out MainChoises choise);
         void ShowEntries(List<Entry> entries);
         void ShowEntrySaved();
     }
