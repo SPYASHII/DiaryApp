@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MainComponents.Interfaces
+namespace MainComponents.Interfaces.UI
 {
-    public interface IDataBaseBuilder
+    public interface IUserInterfaceController : IAuthUI
     {
-        IDatabaseAccess GetDatabaseAccess();
     }
 }

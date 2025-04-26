@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerializationDatabase", "Se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainComponents", "MainComponents\MainComponents.csproj", "{63094A75-DF0F-4B93-ADC4-F96DA9D40AC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleUserInteraction", "ConsoleUserInterction\ConsoleUserInteraction.csproj", "{979424A7-CE40-47F6-BE8E-06CCB9976144}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleUI", "ConsoleUserInterction\ConsoleUI.csproj", "{979424A7-CE40-47F6-BE8E-06CCB9976144}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

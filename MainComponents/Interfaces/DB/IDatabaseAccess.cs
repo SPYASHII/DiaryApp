@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace MainComponents.Interfaces
+namespace MainComponents.Interfaces.DB
 {
     public interface IDatabaseAccess
     {

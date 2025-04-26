@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MainComponents.Interfaces
+namespace MainComponents.Interfaces.UI
 {
-    public interface IUserInteraction
+    public interface IInput
     {
-        void ShowMessage(string message);
         string GetData();
-        string GetData(string message);
     }
 }

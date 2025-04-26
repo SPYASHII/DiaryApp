@@ -1,5 +1,5 @@
 ﻿using JsonDatabase.Models;
-using SerializationDatabase;
+using SerializationDatabase.Interfaces;
 
 namespace JsonDatabase
 {
