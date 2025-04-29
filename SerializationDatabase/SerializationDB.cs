@@ -19,20 +19,26 @@ namespace SerializationDatabase
             _dbAccess = dbAccess;
             _dataConverter = dataConverter;
         }
-        public bool TryLoadDiary(int id, out Diary diary)
+        public bool TryLoadDiary(int id, out Diary? diary)
         {
-            bool result = _dbAccess.TryLoadDiary(id, out DType diaryConv);
+            bool result = _dbAccess.TryLoadDiary(id, out DType? diaryConv);
 
-            diary = _dataConverter.Convert(diaryConv);
+            if (result)
+                diary = _dataConverter.Convert(diaryConv);
+            else
+                diary = null;
 
             return result;
         }
 
-        public bool TryLoadUser(string login, out User user)
+        public bool TryLoadUser(string login, out User? user)
         {
-            bool result = _dbAccess.TryLoadUser(login, out UType userConv);
+            bool result = _dbAccess.TryLoadUser(login, out UType? userConv);
 
-            user = _dataConverter.Convert(userConv);
+            if (result)
+                user = _dataConverter.Convert(userConv);
+            else
+                user = null;
 
             return result;
         }

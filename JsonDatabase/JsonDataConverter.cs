@@ -9,7 +9,7 @@ using SerializationDatabase.Interfaces;
 
 namespace JsonDatabase
 {
-    internal class JsonDataConverter : IDataConverter<JsUser, JsDiary>
+    public class JsonDataConverter : IDataConverter<JsUser, JsDiary>
     {
         public User Convert(JsUser jsUser)
         {

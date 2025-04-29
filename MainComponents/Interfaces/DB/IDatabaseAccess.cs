@@ -12,8 +12,8 @@ namespace MainComponents.Interfaces.DB
     {
         (bool uSuc, bool dSuc) TrySave(User user, Diary diary);
         bool TrySave(Diary diary);
-        bool TryLoadUser(string login, out User user);
-        bool TryLoadDiary(int id, out Diary diary);
+        bool TryLoadUser(string login, out User? user);
+        bool TryLoadDiary(int id, out Diary? diary);
         bool FindUser(string login);
     }
 }

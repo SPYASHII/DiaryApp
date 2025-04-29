@@ -7,10 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.4" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ConsoleUserInteraction\ConsoleUI.csproj" />
+    <ProjectReference Include="..\JsonDatabase\JsonDatabase.csproj" />
     <ProjectReference Include="..\MainComponents\MainComponents.csproj" />
     <ProjectReference Include="..\SerializationDatabase\SerializationDatabase.csproj" />
   </ItemGroup>

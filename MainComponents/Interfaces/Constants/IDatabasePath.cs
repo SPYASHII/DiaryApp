@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MainComponents.Interfaces.DB
+namespace MainComponents.Interfaces.Constants
 {
-    public interface IDataBaseBuilder
+    public interface IDatabasePath
     {
-        IDatabaseAccess GetDatabaseAccess();
+        string DataBasePath {  get; }
     }
 }

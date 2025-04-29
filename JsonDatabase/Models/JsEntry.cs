@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JsonDatabase.Models
 {
-    internal class JsEntry
+    public class JsEntry
     {
         public DateTime Date { get; set; }
 

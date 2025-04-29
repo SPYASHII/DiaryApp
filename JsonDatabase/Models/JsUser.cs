@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JsonDatabase.Models
 {
-    internal class JsUser
+    public class JsUser
     {
         public int Id { get; set; }
         public string Login { get; set; }
