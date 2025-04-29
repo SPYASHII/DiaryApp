@@ -23,5 +23,9 @@ namespace ConsoleUI
 
             Console.ResetColor();
         }
+        public void NewPage()
+        {
+            Console.Clear();
+        }
     }
 }

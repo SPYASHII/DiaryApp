@@ -13,12 +13,10 @@ namespace JsonDatabase
     {
         public User Convert(JsUser jsUser)
         {
-            User user = new User()
+            User user = new User(jsUser.Id, jsUser.Diary_Id)
             {
-                Id = jsUser.Id,
                 Login = jsUser.Login,
                 Password = jsUser.Password,
-                Diary_Id = jsUser.Diary_Id,
             };
 
             return user;
@@ -39,9 +37,7 @@ namespace JsonDatabase
 
         public Diary Convert(JsDiary jsDiary)
         {
-            Diary diary = new Diary();
-
-            diary.Id = jsDiary.Id;
+            Diary diary = new Diary(jsDiary.Id);
 
             foreach (var jsEntry in jsDiary.Entries)
             {

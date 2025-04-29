@@ -2,6 +2,7 @@
 using MainComponents.Interfaces.DB;
 using ServiceBuilders;
 using MainComponents.Interfaces.Builders;
+using MainComponents.Interfaces.Controllers;
 
 namespace DiaryApp
 {
@@ -13,9 +14,19 @@ namespace DiaryApp
 
             var provider = builder.BuildServices();
 
-            var db = provider.GetService<IDatabaseAccess>();
+            var authContr = provider.GetService<IAuthController>();
+            var mainContr = provider.GetService<IMainController>();
 
-            Console.WriteLine(db);
+            if (authContr != null && mainContr != null)
+            {
+                App app = new App(authContr, mainContr);
+
+                app.Start();
+            }
+            else
+            {
+                Console.WriteLine("ERROR");
+            }
         }
     }
 }

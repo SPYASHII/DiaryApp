@@ -15,5 +15,7 @@ namespace MainComponents.Interfaces.DB
         bool TryLoadUser(string login, out User? user);
         bool TryLoadDiary(int id, out Diary? diary);
         bool FindUser(string login);
+        int GetDiaryIds();
+        int GetUserIds();
     }
 }

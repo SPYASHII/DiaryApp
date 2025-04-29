@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MainComponents.Interfaces.Converters
 {
-    public interface ITextToMainChoises
+    public interface ITextToMainChoisesConverter
     {
         MainChoises Convert(string text);
     }

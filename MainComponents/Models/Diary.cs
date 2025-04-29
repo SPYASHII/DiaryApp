@@ -8,12 +8,13 @@ namespace MainComponents.Models
 {
     public class Diary
     {
-        public int Id { get; set; }
+        public int Id { get; }
 
         private List<Entry> _entries;
 
-        public Diary()
+        public Diary(int id)
         {
+            Id = id;
             _entries = new List<Entry>();
         }
         public List<Entry> GetEntries()

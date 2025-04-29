@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace MainComponents.Interfaces.Controllers
 {
-    internal interface IAuthController
+    public interface IAuthController
     {
-        void StartAuthentication();
+        bool StartAuthentication();
     }
 }

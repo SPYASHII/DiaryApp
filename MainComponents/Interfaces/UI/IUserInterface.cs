@@ -8,5 +8,6 @@ namespace MainComponents.Interfaces.UI
 {
     public interface IUserInterface : IInput, IOutput
     {
+        void NewPage();
     }
 }

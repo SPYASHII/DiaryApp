@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MainComponents.Interfaces.Controllers
 {
-    internal interface IMainController
+    public interface IMainController
     {
         void StartMainScenario();
     }

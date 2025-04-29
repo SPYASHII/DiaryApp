@@ -13,5 +13,7 @@ namespace SerializationDatabase.Interfaces
         bool TryLoadUser(string login, out UType? user);
         bool TryLoadDiary(int id, out DType? diary);
         bool FindUser(string login);
+        int GetUserIds();
+        int GetDiaryIds();
     }
 }

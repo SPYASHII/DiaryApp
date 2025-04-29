@@ -197,5 +197,33 @@ namespace JsonDatabase
                 throw;
             }
         }
+
+        public int GetUserIds()
+        {
+            int ids = 0;
+
+            var files = _userFilesDir.GetFiles();
+
+            foreach (var file in files)
+            {
+                ids++;
+            }
+
+            return ids;
+        }
+
+        public int GetDiaryIds()
+        {
+            int ids = 0;
+
+            var files = _userFilesDir.GetFiles();
+
+            foreach (var file in files)
+            {
+                ids++;
+            }
+
+            return ids;
+        }
     }
 }

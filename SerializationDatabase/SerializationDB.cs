@@ -61,5 +61,13 @@ namespace SerializationDatabase
             return result;
         }
         public bool FindUser(string login) => _dbAccess.FindUser(login);
+
+        public int GetDiaryIds() =>
+            _dbAccess.GetDiaryIds();
+
+
+        public int GetUserIds() =>
+            _dbAccess.GetUserIds();
+
     }
 }

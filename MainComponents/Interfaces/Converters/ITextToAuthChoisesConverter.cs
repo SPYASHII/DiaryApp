@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MainComponents.Interfaces.Converters
 {
-    public interface ITextToAuthChoises
+    public interface ITextToAuthChoisesConverter
     {
         AuthChoises Convert(string text);
     }

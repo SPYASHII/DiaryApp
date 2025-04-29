@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MainComponents.Interfaces.Converters
 {
-    internal interface ITextToChoises : ITextToAuthChoises, ITextToMainChoises
+    public interface ITextToChoisesConverter : ITextToAuthChoisesConverter, ITextToMainChoisesConverter
     {
     }
 }
