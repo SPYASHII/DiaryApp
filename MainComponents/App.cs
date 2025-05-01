@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace DiaryApp
+namespace MainComponents
 {
-    internal class App
+    public class App
     {
         private IAuthController _authController;
         private IMainController _mainController;

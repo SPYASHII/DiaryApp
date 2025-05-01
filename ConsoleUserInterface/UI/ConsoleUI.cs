@@ -1,8 +1,8 @@
 ﻿using MainComponents.Interfaces.UI;
 
-namespace ConsoleUI
+namespace ConsoleUserInterface.UI
 {
-    public class ConsoleInterface : IUserInterface
+    public class ConsoleUI : IUserInterface
     {
         public string GetData()
         {

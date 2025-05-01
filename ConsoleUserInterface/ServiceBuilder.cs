@@ -12,15 +12,17 @@ using SerializationDatabase;
 using SerializationDatabase.Interfaces;
 
 using Microsoft.Extensions.DependencyInjection;
+
 using MainComponents.Interfaces.Controllers;
 using MainComponents.Controllers;
 using MainComponents.Interfaces.UI;
 using MainComponents.Interfaces.Converters;
-using MainComponents.Controllers;
 using MainComponents.Converters;
-using ConsoleUI;
 
-namespace ServiceBuilders
+using ConsoleUserInterface.UI;
+using ConsoleUserInterface.Controllers;
+
+namespace ConsoleUserInterface
 {
     public class ServiceBuilder : IServiceBuilder
     {
@@ -54,7 +56,7 @@ namespace ServiceBuilders
         }
         private void AddUIServices()
         {
-            _services.AddSingleton<IUserInterface, ConsoleInterface>();
+            _services.AddSingleton<IUserInterface, ConsoleUI>();
         }
         private void AddControllers()
         {

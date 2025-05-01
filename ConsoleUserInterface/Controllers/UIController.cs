@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MainComponents.Controllers
+namespace ConsoleUserInterface.Controllers
 {
     public class UIController : IUserInterfaceController
     {
@@ -17,7 +17,7 @@ namespace MainComponents.Controllers
         private ITextToMainChoisesConverter _mainConverter;
 
         private IUserInterface _userInterface;
-        public UIController(IUserInterface userInterface,ITextToChoisesConverter choiseConverter)
+        public UIController(IUserInterface userInterface, ITextToChoisesConverter choiseConverter)
         {
             _authConverter = choiseConverter;
             _mainConverter = choiseConverter;
@@ -91,7 +91,7 @@ namespace MainComponents.Controllers
 
             WaitForUser();
         }
-        //этот метод не должен быть здесь, временное решение
+        //HACK: этот метод не должен быть здесь, временное решение
         private void WaitForUser()
         {
             _userInterface.ShowData("\n\nEnter anything");
