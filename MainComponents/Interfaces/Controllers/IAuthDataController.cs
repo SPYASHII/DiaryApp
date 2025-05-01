@@ -13,5 +13,6 @@ namespace MainComponents.Interfaces.Controllers
         bool UserExists(string login);
         bool LoadUser(string login);
         bool CreateUser(string login, string password);
+        void ClearCurrentData();
     }
 }

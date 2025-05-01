@@ -1,11 +1,13 @@
-﻿using MainComponents.Enums;
-using MainComponents.Interfaces.Controllers;
-using MainComponents.Interfaces.UI;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using MainComponents.Enums;
+using MainComponents.Interfaces.Controllers;
+using MainComponents.Interfaces.UI;
+using MainComponents.Models;
 
 namespace MainComponents.Controllers
 {
@@ -42,45 +44,68 @@ namespace MainComponents.Controllers
         }
         private void Registration()
         {
+            string login = _authUI.GetLoginFromUser();
 
+            bool exist = _authDataController.UserExists(login);
+
+            if (!exist)
+            {
+                string password = _authUI.GetPasswordFromUser();
+
+                bool saved = _authDataController.CreateUser(login, password);
+
+                _authUI.ShowResultOfRegistration(saved);
+            }
+            else
+            {
+                _authUI.ShowLoginExist();
+            }
         }
-        //Абсолютно отвратительный метод написаный для временной проверки работоспособности программы
         private bool Login()
         {
             bool loggedIn = false;
             
-            string login = _authUI.GetLoginFromUser();
-
-            if (!string.IsNullOrEmpty(login))
+            if (CheckLogin(out string login))
             {
-                bool userExist = _authDataController.UserExists(login);
-                
-                if (userExist)
+                _authDataController.LoadUser(login);
+
+                if (!CheckPassword())
                 {
-                    _authDataController.LoadUser(login);
-
-                    string password = _authUI.GetPasswordFromUser();
-
-                    if (!string.IsNullOrEmpty(password))
-                    {
-                        if (_authDataController.GetCurrentUser(out var user))
-                        {
-                            if(user?.Password ==  password)
-                                loggedIn = true;
-                            else
-                            {
-                                _authUI.ShowPasswordWrong();
-                            }
-                        }
-                    }
+                    _authUI.ShowPasswordWrong();
+                    _authDataController.ClearCurrentData();
                 }
                 else
                 {
-                    _authUI.ShowLoginWrong();
+                    loggedIn = true;
                 }
             }
-
+            else
+            {
+                _authUI.ShowLoginWrong();
+            }
+            
             return loggedIn;
+        }
+        bool CheckLogin(out string login)
+        {
+            login = _authUI.GetLoginFromUser();
+
+            bool exist = _authDataController.UserExists(login);
+
+            return exist;
+        }
+        bool CheckPassword()
+        {
+            string password = _authUI.GetPasswordFromUser();
+
+            bool correct = false;
+
+            if (_authDataController.GetCurrentUser(out var user))
+            {
+                correct = user?.Password == password;
+            }
+
+            return correct;
         }
     }
 }

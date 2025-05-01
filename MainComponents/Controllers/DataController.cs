@@ -35,6 +35,9 @@ namespace MainComponents.Controllers
             Diary newDiary = new Diary(_nextDiaryId);
             User newUser = new User(_nextUserId, newDiary.Id);
 
+            newUser.Login = login;
+            newUser.Password = password;
+
             bool result = SaveData(newUser, newDiary);
 
             if (result)

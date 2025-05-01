@@ -15,6 +15,6 @@ namespace MainComponents.Interfaces.UI
         void ShowLoginExist();
         void ShowLoginWrong();
         void ShowPasswordWrong();
-        void ShowRegistrationCompleted();
+        void ShowResultOfRegistration(bool result);
     }
 }

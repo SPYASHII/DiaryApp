@@ -89,15 +89,7 @@ namespace ConsoleUserInterface.Controllers
 
             _userInterface.ShowData("Entry saved!");
 
-            WaitForUser();
-        }
-        //HACK: этот метод не должен быть здесь, временное решение
-        private void WaitForUser()
-        {
-            _userInterface.ShowData("\n\nEnter anything");
-
-            //TODO: Добавить в IUserInterface метод WaitForUser();
-            _userInterface.GetData();
+            _userInterface.WaitForUser();
         }
 
         public void ShowError(string text)
@@ -111,7 +103,7 @@ namespace ConsoleUserInterface.Controllers
 
             _userInterface.ShowData("Login exist!");
 
-            WaitForUser();
+            _userInterface.WaitForUser();
         }
 
         public void ShowLoginWrong()
@@ -120,7 +112,7 @@ namespace ConsoleUserInterface.Controllers
 
             _userInterface.ShowData("Login is wrong!");
 
-            WaitForUser();
+            _userInterface.WaitForUser();
         }
 
         public void ShowPasswordWrong()
@@ -129,16 +121,23 @@ namespace ConsoleUserInterface.Controllers
 
             _userInterface.ShowData("Password is wrong!");
 
-            WaitForUser();
+            _userInterface.WaitForUser();
         }
 
-        public void ShowRegistrationCompleted()
+        public void ShowResultOfRegistration(bool result)
         {
             _userInterface.NewPage();
 
-            _userInterface.ShowData("Registration successfull!");
+            var resultMessage = new StringBuilder("Registration ");
 
-            WaitForUser();
+            if (result)
+                resultMessage.Append("successfull!");
+            else
+                resultMessage.Append("failed!");
+
+            _userInterface.ShowData(resultMessage.ToString());
+
+            _userInterface.WaitForUser();
         }
     }
 }

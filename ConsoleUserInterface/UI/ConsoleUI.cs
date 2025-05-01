@@ -27,5 +27,11 @@ namespace ConsoleUserInterface.UI
         {
             Console.Clear();
         }
+        public void WaitForUser()
+        {
+            ShowData("\n\nEnter anything");
+
+            Console.ReadLine();
+        }
     }
 }

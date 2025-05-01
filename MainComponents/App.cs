@@ -10,8 +10,8 @@ namespace MainComponents
 {
     public class App
     {
-        private IAuthController _authController;
-        private IMainController _mainController;
+        private readonly IAuthController _authController;
+        private readonly IMainController _mainController;
         public App(IAuthController authController, IMainController mainController)
         {
             _authController = authController;
