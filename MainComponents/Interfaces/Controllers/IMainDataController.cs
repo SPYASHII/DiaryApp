@@ -1,4 +1,5 @@
-﻿using MainComponents.Models;
+﻿using MainComponents.Interfaces.Data;
+using MainComponents.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,14 +8,9 @@ using System.Threading.Tasks;
 
 namespace MainComponents.Interfaces.Controllers
 {
-    public interface IMainDataController
+    public interface IMainDataController : 
+        IClearData, IGetCurrentData,
+        ISaveData, ILoadDiary
     {
-        bool LoadDiary();
-        bool GetCurrentUser(out User? user);
-        bool GetCurrentDiary(out Diary? diary);
-        bool SaveUserData();
-        bool SaveDiaryData();
-        bool SaveData();
-        void ClearCurrentData();
     }
 }

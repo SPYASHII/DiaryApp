@@ -21,6 +21,8 @@ using MainComponents.Converters;
 
 using ConsoleUserInterface.UI;
 using ConsoleUserInterface.Controllers;
+using ConsoleUserInterface.Interfaces;
+
 
 namespace ConsoleUserInterface
 {
@@ -60,9 +62,15 @@ namespace ConsoleUserInterface
         }
         private void AddControllers()
         {
-            _services.AddSingleton<IDataController, DataController>()
-                .AddSingleton<IAuthDataController, DataController>()
-                .AddSingleton<IMainDataController, DataController>();
+            //_services.AddSingleton<IDataController, DataController>()
+            //    .AddSingleton<IAuthDataController, DataController>()
+            //    .AddSingleton<IMainDataController, DataController>();
+
+            _services.AddSingleton<DataController>();
+            _services.AddSingleton<IDataController>(sp => sp.GetRequiredService<DataController>());
+            _services.AddSingleton<IAuthDataController>(sp => sp.GetRequiredService<DataController>());
+            _services.AddSingleton<IMainDataController>(sp => sp.GetRequiredService<DataController>());
+
 
             _services.AddSingleton<IUserInterfaceController, UIController>()
                 .AddSingleton<IMainUI, UIController>()

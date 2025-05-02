@@ -18,5 +18,15 @@ namespace MainComponents.Models
             Text = text;
         }
 
+        public override string ToString()
+        {
+            var builder = new StringBuilder();
+
+            builder.Append(Date);
+            builder.AppendLine();
+            builder.Append(Text);
+
+            return builder.ToString();
+        }
     }
 }

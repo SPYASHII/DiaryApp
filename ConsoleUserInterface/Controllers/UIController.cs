@@ -1,17 +1,17 @@
 ﻿using MainComponents.Enums;
 using MainComponents.Interfaces.Controllers;
 using MainComponents.Interfaces.Converters;
-using MainComponents.Interfaces.UI;
 using MainComponents.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConsoleUserInterface.Interfaces;
 
 namespace ConsoleUserInterface.Controllers
 {
-    public class UIController : IUserInterfaceController
+    internal class UIController : IUserInterfaceController
     {
         private ITextToAuthChoisesConverter _authConverter;
         private ITextToMainChoisesConverter _mainConverter;
@@ -58,7 +58,7 @@ namespace ConsoleUserInterface.Controllers
         {
             _userInterface.NewPage();
 
-            _userInterface.ShowData(date.Date.ToString() + "\n");
+            _userInterface.ShowData(date.ToShortDateString() + "\n");
             _userInterface.ShowData("Enter a text for current date or enter data/quit");
 
             string data = _userInterface.GetData();
@@ -81,13 +81,22 @@ namespace ConsoleUserInterface.Controllers
             {
                 _userInterface.ShowData(entry.ToString());
             }
+
+            _userInterface.WaitForUser();
         }
 
-        public void ShowEntrySaved()
+        public void ShowResultOfEntrySaving(bool saved)
         {
             _userInterface.NewPage();
 
-            _userInterface.ShowData("Entry saved!");
+            var resultMessage = new StringBuilder("Entry saving ");
+
+            if (saved)
+                resultMessage.Append("successfully!");
+            else
+                resultMessage.Append("failed!");
+
+            _userInterface.ShowData(resultMessage.ToString());
 
             _userInterface.WaitForUser();
         }

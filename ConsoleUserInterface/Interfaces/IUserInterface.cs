@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MainComponents.Interfaces.UI
+namespace ConsoleUserInterface.Interfaces
 {
-    public interface IUserInterface : IInput, IOutput
+    internal interface IUserInterface : IInput, IOutput
     {
         void NewPage();
         void WaitForUser();

@@ -1,4 +1,5 @@
-﻿using MainComponents.Models;
+﻿using MainComponents.Interfaces.Data;
+using MainComponents.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,12 +8,10 @@ using System.Threading.Tasks;
 
 namespace MainComponents.Interfaces.Controllers
 {
-    public interface IAuthDataController
+    public interface IAuthDataController : 
+        IClearData, IGetCurrentUser,
+        ILoadUser, ICreateUser,
+        ICheckUser
     {
-        bool GetCurrentUser(out User? user);
-        bool UserExists(string login);
-        bool LoadUser(string login);
-        bool CreateUser(string login, string password);
-        void ClearCurrentData();
     }
 }

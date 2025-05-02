@@ -1,12 +1,13 @@
-﻿using MainComponents.Interfaces.UI;
+﻿using ConsoleUserInterface.Interfaces;
+
 
 namespace ConsoleUserInterface.UI
 {
-    public class ConsoleUI : IUserInterface
+    internal class ConsoleUI : IUserInterface
     {
-        public string GetData()
+        public string? GetData()
         {
-            string data = Console.ReadLine();
+            string? data = Console.ReadLine();
 
             return data;
         }

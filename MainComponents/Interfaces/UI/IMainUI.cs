@@ -12,6 +12,6 @@ namespace MainComponents.Interfaces.UI
     {
         string GetTextForDateOrChoise(DateTime date, out MainChoises choise);
         void ShowEntries(List<Entry> entries);
-        void ShowEntrySaved();
+        void ShowResultOfEntrySaving(bool saved);
     }
 }
